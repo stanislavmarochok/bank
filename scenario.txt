@@ -1,0 +1,32 @@
+HI
+Let's create some shitttt.
+What's about PHP Laravel for API, and C# WPF for client?
+
+API:
+ - register user
+ - authorize user
+ - basic bank payment methods
+   - get money
+   - put money
+   - some other shit i don't know, we will add new points during the work
+   
+Client:
+ - authorize
+ - register
+ - basic bank operations
+ 
+I already have Composer for Laravel, and Visual Studio for WPF.
+
+I will copy codes from Stack Overflow :D
+
+Let's begin...
+
+//  Chapter 1 - the beginning //
+
+1. Create GitHub repository - "BANK"
+2. Create Laravel project - I don't remember how to do it :D
+   1. Created folder inside another folder - I don't like it, let's move it up
+   2. fuck, I broke it, let's create the whole project from the very beginning xD
+   3. project created, let's run it up!
+   4. started server on localhost:8000 - it works lol xD
+   5. let's upload this to repository
