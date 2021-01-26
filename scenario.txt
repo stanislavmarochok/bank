@@ -30,3 +30,6 @@ Let's begin...
    3. project created, let's run it up!
    4. started server on localhost:8000 - it works lol xD
    5. let's upload this to repository
+   6. problem was with credentials - i had saved credentials from another github account
+3. Let's create WPF app
+   1. Project created - let's push it to the repository
