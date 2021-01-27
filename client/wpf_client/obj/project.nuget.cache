@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "hSngBpKaAEw8cToVhR0NQmgA7hDljyiRxdfWgW14xLFofCso7TQx7PXQkPyv/lvopvIUVwor0jYhQhBGlCbVNg==",
+  "dgSpecHash": "Dxl7kB5Zk9OKam9XNfCa9LQ/dejj8HJF1IR34aHH/d8dQPQJmwEC3VzRDPTAjcOyy7KNfHnnLRM9mAyadM9GAQ==",
   "success": true,
   "projectFilePath": "D:\\Work\\ZZZ\\client\\wpf_client\\wpf_client.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\sssss\\.nuget\\packages\\materialdesigncolors\\1.2.7\\materialdesigncolors.1.2.7.nupkg.sha512",
+    "C:\\Users\\sssss\\.nuget\\packages\\materialdesignthemes\\3.2.0\\materialdesignthemes.3.2.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,0 +1,5 @@
+D:\Work\ZZZ\client\wpf_client\obj\Debug\netcoreapp3.1\wpf_client.csprojAssemblyReference.cache
+D:\Work\ZZZ\client\wpf_client\obj\Debug\netcoreapp3.1\BankAccountView.g.cs
+D:\Work\ZZZ\client\wpf_client\obj\Debug\netcoreapp3.1\App.g.cs
+D:\Work\ZZZ\client\wpf_client\obj\Debug\netcoreapp3.1\wpf_client_MarkupCompile.cache
+D:\Work\ZZZ\client\wpf_client\obj\Debug\netcoreapp3.1\wpf_client_MarkupCompile.lref

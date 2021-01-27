@@ -87,3 +87,12 @@ POST	/api/auth/signout
 
 	33. OKI it works, we can move on !)
 	34. Let's add Swagger dokumentation to our API and comment out all the functions
+	35. Let's have a break from API and go to WPF client
+
+WPF:
+
+ - login / logout
+ - registration
+ - main panel with basic bank operations
+ 
+1. Let's begin from login window
