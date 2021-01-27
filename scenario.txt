@@ -24,6 +24,7 @@ Let's begin...
 //  Chapter 1 - the beginning //
 
 1. Create GitHub repository - "BANK"
+
 2. Create Laravel project - I don't remember how to do it :D
    1. Created folder inside another folder - I don't like it, let's move it up
    2. fuck, I broke it, let's create the whole project from the very beginning xD
@@ -31,5 +32,58 @@ Let's begin...
    4. started server on localhost:8000 - it works lol xD
    5. let's upload this to repository
    6. problem was with credentials - i had saved credentials from another github account
+
 3. Let's create WPF app
    1. Project created - let's push it to the repository
+   2. Cool, now let's begin with API
+
+4. Laravel API:
+   1. I don't know how to begin...
+   2. Let's check we have a database and it even works. I don't have database so I have to install a new one. Better install XAMPP - it's easier.
+   3. I have installed XAMPP - let's check if it works
+   4. It doesn't work fuck
+   5. it's a fucking hell
+   6. I'm uninstalling fucking XAMPP and installing WAMPserver :D
+   7. WAMP server installed and even works xD
+   8. login for phpMyAdmin is root and password is empty
+   9. Let's create DB tables for our API
+   10. Maybe we gonna use Laravel Migrations, but I am not sure if it is a good idea, but let's try.
+   11. I didn't know Laravel already has some migrations prepared - Laravel cares :)
+   12. Anyway, we will begin from the beginning
+   13. Cool, we ahve created a command to create a database, I don't know why, but I needed it :)
+   14. Let's run migrations
+   15. oh, database name is different from the one in .env
+   16. cool, now, let's alter the table and add some more details
+   17. let's create registration and authorization for our API
+   18. We need tymon/jwt-auth module
+   19. tymon install successfully
+   20. Let's follow this tutorial https://www.remotestack.io/build-jwt-authentication-in-laravel/
+   21. It works :)
+   22. Let's alter table users one more time and add password field, and username field
+   
+Methods	Endpoints
+
+POST	/api/auth/signup
+POST	/api/auth/signin
+GET		/api/auth/user
+POST	/api/auth/token-refresh
+POST	/api/auth/signout
+
+	23. YEAH boiiiiiiiiiiii, registration works
+	24. YEAH boiii login works
+	25. user get info works
+	26. refresh token works
+	27. logout works, registration and authorization finished, can make a commit :)
+	28. let's have a break
+	29. break finished, let's continue
+	30. let's create a table 'deposit', it will have a deposit ID, user ID, amount of deposit and percent of tax
+	31. cool bank accoutn created, one bank account belongs to only one user, one to one, it is created automatically during the registration
+	32. do you see how much problem I face to ?) It's not funny at all
+
+1. Добавление средств пользователю(Как депозит)
+2. Отправка средств от пользователя(Как вывод средств) и снятие коммисии 0.5%
+3. Поулчить баланс пользователя
+4. Swagger
+
+	33. OKI it works, we can move on !)
+	34. Let's add Swagger dokumentation to our API and comment out all the functions

@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Models\User;
-
+use App\Models\BankAccount;
 
 class JwtAuthController extends Controller
 {
@@ -16,6 +15,38 @@ class JwtAuthController extends Controller
         $this->middleware('auth:api', ['except' => ['login', 'register']]);
     }
 
+    /**
+     * @OA\Post(
+     * path="/api/auth/signin",
+     * summary="Sign in",
+     * description="Login by email, password",
+     * operationId="login",
+     * tags={"auth"},
+     * @OA\RequestBody(
+     *    required=true,
+     *    description="Pass user credentials",
+     *    @OA\JsonContent(
+     *       required={"email","password"},
+     *       @OA\Property(property="email", type="string", format="email", example="user1@mail.com"),
+     *       @OA\Property(property="password", type="string", format="password", example="PassWord12345"),
+     *    ),
+     * ),
+     * @OA\Response(
+     *    response=422,
+     *    description="Wrong credentials response",
+     *    @OA\JsonContent(
+     *       @OA\Property(property="message", type="string", example="Sorry, wrong email address or password. Please try again")
+     *        )
+     *     ),
+     * @OA\Response(
+     *    response=401,
+     *    description="Unauthorized",
+     *    @OA\JsonContent(
+     *       @OA\Property(property="message", type="string", example="You are not authorized. Please try again")
+     *        )
+     *     )
+     * )
+     */
     /**
      * Get a JWT via given credentials.
     */
@@ -59,9 +90,16 @@ class JwtAuthController extends Controller
                     ['password' => bcrypt($request->password)]
                 ));
 
+        $bank_account = new BankAccount;
+        $bank_account->user_id = $user->id;
+        $bank_account->amount = 0;
+        $bank_account->tax_percent = 0.5;
+        $bank_account->save();
+
         return response()->json([
-            'message' => 'User signed up',
-            'user'    => $user
+            'message'      => 'User signed up',
+            'user'         => $user,
+            'bank_account' => $bank_account,
         ], 201);
     }
 
