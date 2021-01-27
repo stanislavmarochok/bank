@@ -50,8 +50,11 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock 
-                Text="email" FontFamily="Comic Sans MS" FontSize="36" VerticalAlignment="Center" HorizontalAlignment="Center"
-                />
+                Text="email" 
+                FontFamily="Comic Sans MS" 
+                FontSize="36" 
+                VerticalAlignment="Center" 
+                HorizontalAlignment="Center" />
 
             <TextBox
                 Padding="10"
