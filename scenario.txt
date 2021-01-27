@@ -96,3 +96,6 @@ WPF:
  - main panel with basic bank operations
  
 1. Let's begin from login window
+2. FUUUUUUUUUUUUUUUUUUUUUUUUUUUUUCK
+3. I finally did HTTP request to my api 
+4. It took reaaly long time
