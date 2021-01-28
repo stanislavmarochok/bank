@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Windows;
 
 namespace wpf_client.Utils
 {
@@ -31,13 +32,26 @@ namespace wpf_client.Utils
             client.BaseAddress = new Uri("http://localhost:8000/api/");
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Settings.Default.AccessToken);
             
-            HttpResponseMessage response;
-            if (requestType == RequestType.POST)
-                response = client.PostAsync(url, data != null ? new FormUrlEncodedContent(data) : null).Result;
-            else
-                response = client.GetAsync(url).Result;
+            HttpResponseMessage response = null;
+            try
+            {
+                if (requestType == RequestType.POST)
+                    response = client.PostAsync(url, data != null ? new FormUrlEncodedContent(data) : null).Result;
+                else
+                    response = client.GetAsync(url).Result;
+            } catch (Exception e)
+            {
+
+            }
 
             var result = new HTTPResponse();
+
+            if (response == null)
+            {
+                result.StatusCode = HttpStatusCode.BadRequest;
+                result.BodyString = @"Server not responses";
+                return result;
+            }
 
             result.StatusCode = response.StatusCode;
             result.BodyString = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
