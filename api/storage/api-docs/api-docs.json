@@ -5,6 +5,138 @@
         "version": "1.0.0"
     },
     "paths": {
+        "/api/bank/details": {
+            "get": {
+                "tags": [
+                    "bank"
+                ],
+                "summary": "Get user's bank account",
+                "description": "Get details about user's bank account",
+                "operationId": "details",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": "1"
+                                        },
+                                        "user_id": {
+                                            "type": "number",
+                                            "example": "1"
+                                        },
+                                        "amount": {
+                                            "type": "decimal",
+                                            "example": "345.34534"
+                                        },
+                                        "tax_percent": {
+                                            "type": "decimal",
+                                            "example": "0.5"
+                                        },
+                                        "created_at": {
+                                            "type": "datetime",
+                                            "example": "2021-01-27T11:03:49.000000Z"
+                                        },
+                                        "updated": {
+                                            "type": "datetime",
+                                            "example": "2021-01-27T11:03:49.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/bank/amount": {
+            "get": {
+                "tags": [
+                    "bank"
+                ],
+                "summary": "Get user's money on his bank account",
+                "description": "Get amount of money",
+                "operationId": "details",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "234.34344"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/bank/add_amount": {
+            "post": {
+                "tags": [
+                    "bank"
+                ],
+                "summary": "Add money on user's account",
+                "description": "Add money on user's account",
+                "operationId": "add_amount",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "OK"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/bank/charge_amount": {
+            "post": {
+                "tags": [
+                    "bank"
+                ],
+                "summary": "Charge money from user's bank account",
+                "description": "Charge money from user's bank account",
+                "operationId": "charge_amount",
+                "responses": {
+                    "406": {
+                        "description": "Not Acceptable",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "ERROR: trying to charge 45, tax 0.5% is 400000000, whole amount is \n     * , it is more than user has on his bank account. Refused."
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/api/auth/signin": {
             "post": {
                 "tags": [
@@ -75,9 +207,166 @@
                     }
                 }
             }
+        },
+        "/api/auth/register": {
+            "post": {
+                "tags": [
+                    "auth"
+                ],
+                "summary": "Sign up",
+                "description": "Register in ZZZ Bank Control System with your credentials",
+                "operationId": "register",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "username",
+                                    "firstname",
+                                    "lastname",
+                                    "email",
+                                    "password",
+                                    "confirm_password"
+                                ],
+                                "properties": {
+                                    "username": {
+                                        "type": "string",
+                                        "example": "suka.hujuka"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "user1@mail.com"
+                                    },
+                                    "firstname": {
+                                        "type": "string",
+                                        "example": "Dobryna"
+                                    },
+                                    "lastname": {
+                                        "type": "string",
+                                        "example": "Nikitich"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "FuckZmejHorynich"
+                                    },
+                                    "confirm_password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "FuckZmejHorynich"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Validation error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, invalid parameters. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/auth/signout": {
+            "post": {
+                "tags": [
+                    "auth"
+                ],
+                "summary": "Log out",
+                "description": "Log out from ZZZ Bank Control System",
+                "operationId": "logout",
+                "responses": {
+                    "200": {
+                        "description": "User logged out",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "User logged out"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/auth/token-refresh": {
+            "post": {
+                "tags": [
+                    "auth"
+                ],
+                "summary": "Refresh access token",
+                "description": "Refresh client's access token so he will not need a sign in again",
+                "operationId": "tokenrefresh",
+                "responses": {
+                    "200": {
+                        "description": "token refreshed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "User logged out"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/auth/user": {
+            "get": {
+                "tags": [
+                    "auth"
+                ],
+                "summary": "Get user info",
+                "description": "Get user info from ZZZ Bank Control System",
+                "operationId": "user",
+                "responses": {
+                    "200": {
+                        "description": "User logged out",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "User logged out"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
-    },
-    "security": [
-        []
-    ]
+    }
 }

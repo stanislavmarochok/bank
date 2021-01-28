@@ -68,6 +68,35 @@ class JwtAuthController extends Controller
     }
 
     /**
+     * @OA\Post(
+     * path="/api/auth/register",
+     * summary="Sign up",
+     * description="Register in ZZZ Bank Control System with your credentials",
+     * operationId="register",
+     * tags={"auth"},
+     * @OA\RequestBody(
+     *    required=true,
+     *    description="Pass user credentials",
+     *    @OA\JsonContent(
+     *       required={"username","firstname","lastname","email","password","confirm_password"},
+     *       @OA\Property(property="username", type="string", example="suka.hujuka"),
+     *       @OA\Property(property="email", type="string", format="email", example="user1@mail.com"),
+     *       @OA\Property(property="firstname", type="string", example="Dobryna"),
+     *       @OA\Property(property="lastname", type="string", example="Nikitich"),
+     *       @OA\Property(property="password", type="string", format="password", example="FuckZmejHorynich"),
+     *       @OA\Property(property="confirm_password", type="string", format="password", example="FuckZmejHorynich"),
+     *    ),
+     * ),
+     * @OA\Response(
+     *    response=400,
+     *    description="Validation error",
+     *    @OA\JsonContent(
+     *       @OA\Property(property="message", type="string", example="Sorry, invalid parameters. Please try again")
+     *        )
+     *     ),
+     * )
+     */
+    /**
      * Sign up.
      *
      * @return \Illuminate\Http\JsonResponse
@@ -103,7 +132,28 @@ class JwtAuthController extends Controller
         ], 200);
     }
 
-
+    
+    /**
+     * @OA\Post(
+     * path="/api/auth/signout",
+     * summary="Log out",
+     * description="Log out from ZZZ Bank Control System",
+     * operationId="logout",
+     * tags={"auth"},
+     * @OA\Header(
+     *     header="Authorization: Bearer <token>",
+     *     description="Client's access token",
+     *     @OA\Schema( type="string" )
+     * ),
+     * @OA\Response(
+     *    response=200,
+     *    description="User logged out",
+     *    @OA\JsonContent(
+     *       @OA\Property(property="message", type="string", example="User logged out")
+     *        )
+     *     ),
+     * )
+     */
     /**
      * Sign out
     */
@@ -113,12 +163,54 @@ class JwtAuthController extends Controller
     }
 
     /**
+     * @OA\Post(
+     * path="/api/auth/token-refresh",
+     * summary="Refresh access token",
+     * description="Refresh client's access token so he will not need a sign in again",
+     * operationId="tokenrefresh",
+     * tags={"auth"},
+     * @OA\Header(
+     *     header="Authorization: Bearer <token>",
+     *     description="Client's access token",
+     *     @OA\Schema( type="string" )
+     * ),
+     * @OA\Response(
+     *    response=200,
+     *    description="token refreshed",
+     *    @OA\JsonContent(
+     *       @OA\Property(property="message", type="string", example="User logged out")
+     *        )
+     *     ),
+     * )
+     */
+    /**
      * Token refresh
     */
     public function refresh() {
         return $this->generateToken(auth()->refresh());
     }
 
+    /**
+     * @OA\Get(
+     * path="/api/auth/user",
+     * summary="Get user info",
+     * description="Get user info from ZZZ Bank Control System",
+     * operationId="user",
+     * tags={"auth"},
+     * @OA\Header(
+     *     header="Authorization: Bearer <token>",
+     *     description="Client's access token",
+     *     @OA\Schema( type="string" )
+     * ),
+     * @OA\Response(
+     *    response=200,
+     *    description="User logged out",
+     *    @OA\JsonContent(
+     *       @OA\Property(property="message", type="string", example="User logged out")
+     *        )
+     *     ),
+     * )
+     */
     /**
      * User
     */
