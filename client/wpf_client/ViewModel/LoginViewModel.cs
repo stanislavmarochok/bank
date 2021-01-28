@@ -25,6 +25,8 @@ namespace wpf_client.ViewModel
 
         private void Login()
         {
+            this.ViewParent.Focus();
+
             var response = request(RequestType.POST, "auth/signin",
                 new Dictionary<string, string>
                 {
