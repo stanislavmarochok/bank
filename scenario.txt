@@ -107,3 +107,7 @@ API:
 
 1. OK now let's get back to API and add some Swagger documentation, hope it will not be difficult T_T
 2. Swagger added
+
+FINISH:
+
+1. Now I have to create a readme.md5 for my repository.

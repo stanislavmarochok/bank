@@ -1,0 +1,25 @@
+This repository contains server-client application, which I called ZZZ Bank.
+
+Server side, API, is made with Laravel framework. I have used a JWT token for authorization.
+User have to register, then sign in using his credentials, then he gets an access token.
+
+Required parameters for registration are: username, email, first_name, last_name, password, password_confirmation.
+Required parameters for authentication are: email, password.
+
+Client side, Windows application, is made in WPF, C# framework. There is an MVVM design pattern implemented, program saves user's access token so he will not need to sign in again, until token expiration.
+
+There are several things you have to change in files to test the project:
+ 1. In file api/.env - write credentials to connect to your database, I am connection to my local database.
+ 2. In file client/wpf_client/Utils/HTTPConnectionBase.cs - change request base address to the one you need, pr leave the same...
+
+How to start the project:
+ (!!! You have to have PHP, Composer, MySQL installed, I have PHP 7.4)
+ 1. Clone the whole repository to your local directory.
+ 2. Open folder "api" in command line
+ 3. Execute command "php artisan db:create" - it will create a database "bank" in your SQL client
+ 4. Execute command "php artisan migrate" - it will create all the neccesary tables in the database
+ 5. Execute command "php artisan serve" - it will run the API on localhost:8000
+ 6. Open folder "client/wpf_client/bin/Debug/netcoreapp3.1" and run file "wpf_client.exe"
+ 7. Enjoy
+ 
+If you have any question contact me ssssstas30@gmail.com.
