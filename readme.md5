@@ -1,5 +1,7 @@
 This repository contains server-client application, which I called ZZZ Bank.
 
+API has a Swagger documentation on address /api/documentation
+
 Server side, API, is made with Laravel framework. I have used a JWT token for authorization.
 User have to register, then sign in using his credentials, then he gets an access token.
 
