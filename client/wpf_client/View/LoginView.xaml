@@ -6,6 +6,7 @@
         mc:Ignorable="d"
         Title="Login in ZZZ Bank Control"
         ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
         Height="500" 
         Width="1000">
     <Grid>
@@ -125,6 +126,7 @@
             
                 <Button
                     Grid.Row="0"
+                    IsDefault="True"
                     Command="{Binding Path=LoginClick}" >
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

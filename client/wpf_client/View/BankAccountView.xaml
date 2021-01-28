@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:wpf_client"
         mc:Ignorable="d"
         ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
         Title="ZZZ Bank Control" 
         Height="400" 
         Width="800">
@@ -45,7 +46,8 @@
             <Button
                 Grid.Row="0"
                 Grid.Column="1"
-                Margin="10" >
+                Margin="10"
+                Command="{Binding Path=LogoutClick}" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF4FD7FF"/>
@@ -70,32 +72,34 @@
         <TextBlock
             Grid.Row="2"
             Margin="10,10,10,10"
-            Text="Balance: 55$" 
+            Text="{Binding Path=Amount, StringFormat='Balance: {0}$'}" 
             FontSize="36" 
             FontFamily="Arial Black" />
 
         <Grid
             Grid.Row="3">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
             <TextBox
                 Grid.Column="0"
-                Margin="10,10,10,10"
-                Text="5"
-                Height="80"
+                Margin="0, 30"
+                Name="AmountToAddCharge"
+                PreviewTextInput="AmountToAddCharge_PreviewTextInput"
+                Text="{Binding Path=AmountToAddCharge, Mode=TwoWay}"
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
-                FontSize="60" 
-                FontFamily="Arial Black" Background="#FFDEDEDE" />
+                FontSize="45" 
+                FontFamily="Arial Black" Background="White" />
 
             <Button
                 Name="AddButton"
                 Grid.Column="1"
-                Margin="30" >
+                Margin="0, 30" 
+                Command="{Binding Path=AddClick}">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFA0FB76" Offset="0.004"/>
@@ -103,14 +107,15 @@
                     </LinearGradientBrush>
                 </Button.Background>
                 <TextBlock 
-                    Text="Add" FontFamily="Bahnschrift" FontSize="48"
-                    />
+                    Text="Add" 
+                    FontFamily="Bahnschrift" 
+                    FontSize="48" />
             </Button>
 
             <Button
                 Grid.Column="2"
-                Margin="30"
-                >
+                Margin="0, 30"
+                Command="{Binding Path=ChargeClick}" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFFD6C36" Offset="0.004"/>
@@ -120,10 +125,8 @@
                 <TextBlock 
                     Text="Charge" 
                     FontFamily="Bahnschrift" 
-                    FontSize="48"
-                    />
+                    FontSize="48" />
             </Button>
         </Grid>
-
     </Grid>
 </Window>

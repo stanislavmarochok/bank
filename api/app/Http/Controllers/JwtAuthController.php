@@ -100,7 +100,7 @@ class JwtAuthController extends Controller
             'message'      => 'User signed up',
             'user'         => $user,
             'bank_account' => $bank_account,
-        ], 201);
+        ], 200);
     }
 
 

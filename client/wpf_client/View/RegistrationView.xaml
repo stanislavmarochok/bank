@@ -6,7 +6,8 @@
         mc:Ignorable="d"
         Title="Registration in ZZZ Bank Control"
         ResizeMode="NoResize"
-        Height="800" 
+        WindowStartupLocation="CenterScreen"
+        SizeToContent="Height"
         Width="1000">
     <Grid>
         <Grid.Background>
@@ -19,13 +20,14 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="120" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
         </Grid.RowDefinitions>
 
         <TextBlock
@@ -56,7 +58,7 @@
             <TextBlock 
                 Text="username" 
                 FontFamily="Comic Sans MS" 
-                FontSize="36" 
+                FontSize="30" 
                 VerticalAlignment="Center" 
                 HorizontalAlignment="Center" />
 
@@ -65,12 +67,12 @@
                 Margin="20"
                 BorderThickness="1"
                 BorderBrush="Black"
-                Text=""
+                Text="{Binding Path=Username, Mode=TwoWay}"
                 Grid.Row="1"
                 Grid.Column="1" 
                 Foreground="#FF1B1212" 
                 FontFamily="Comic Sans MS" 
-                FontSize="36" >
+                FontSize="30" >
                 <TextBox.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFFFF980"/>
@@ -92,7 +94,7 @@
             <TextBlock 
                 Text="email" 
                 FontFamily="Comic Sans MS" 
-                FontSize="36" 
+                FontSize="30" 
                 VerticalAlignment="Center" 
                 HorizontalAlignment="Center"
                 />
@@ -102,12 +104,12 @@
                 Margin="20"
                 BorderThickness="1"
                 BorderBrush="Black"
-                Text=""
+                Text="{Binding Path=Email, Mode=TwoWay}"
                 Grid.Row="1"
                 Grid.Column="1" 
                 Foreground="#FF1B1212" 
                 FontFamily="Comic Sans MS" 
-                FontSize="36" >
+                FontSize="30" >
                 <TextBox.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFFFF980"/>
@@ -129,7 +131,7 @@
             <TextBlock 
                 Text="last name" 
                 FontFamily="Comic Sans MS" 
-                FontSize="36" 
+                FontSize="30" 
                 VerticalAlignment="Center" 
                 HorizontalAlignment="Center"
                 />
@@ -139,12 +141,12 @@
                 Margin="20"
                 BorderThickness="1"
                 BorderBrush="Black"
-                Text=""
+                Text="{Binding Path=Lastname, Mode=TwoWay}"
                 Grid.Row="1"
                 Grid.Column="1" 
                 Foreground="#FF1B1212" 
                 FontFamily="Comic Sans MS" 
-                FontSize="36" >
+                FontSize="30" >
                 <TextBox.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFFFF980"/>
@@ -166,7 +168,7 @@
             <TextBlock 
                 Text="first name" 
                 FontFamily="Comic Sans MS" 
-                FontSize="36" 
+                FontSize="30" 
                 VerticalAlignment="Center" 
                 HorizontalAlignment="Center"
                 />
@@ -176,12 +178,12 @@
                 Margin="20"
                 BorderThickness="1"
                 BorderBrush="Black"
-                Text=""
+                Text="{Binding Path=Firstname, Mode=TwoWay}"
                 Grid.Row="1"
                 Grid.Column="1" 
                 Foreground="#FF1B1212" 
                 FontFamily="Comic Sans MS" 
-                FontSize="36" >
+                FontSize="30" >
                 <TextBox.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFFFF980"/>
@@ -203,7 +205,7 @@
             <TextBlock 
                 Text="password" 
                 FontFamily="Comic Sans MS" 
-                FontSize="36" 
+                FontSize="30" 
                 VerticalAlignment="Center" 
                 HorizontalAlignment="Center" />
 
@@ -212,12 +214,48 @@
                 Margin="20"
                 BorderThickness="1"
                 BorderBrush="Black"
-                Text=""
+                Text="{Binding Path=Password, Mode=TwoWay}"
                 Grid.Row="1"
                 Grid.Column="1" 
                 Foreground="#FF1B1212" 
                 FontFamily="Comic Sans MS" 
-                FontSize="36" >
+                FontSize="30" >
+                <TextBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFFF980"/>
+                        <GradientStop Color="#FFE1F991" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.Background>
+            </TextBox>
+        </Grid>
+        
+        <Grid
+            Grid.Row="6"
+            Grid.Column="0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="4*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock 
+                Text="confirm" 
+                FontFamily="Comic Sans MS" 
+                FontSize="30" 
+                VerticalAlignment="Center" 
+                HorizontalAlignment="Center" />
+
+            <TextBox
+                Padding="10"
+                Margin="20"
+                BorderThickness="1"
+                BorderBrush="Black"
+                Text="{Binding Path=ConfirmPassword, Mode=TwoWay}"
+                Grid.Row="1"
+                Grid.Column="1" 
+                Foreground="#FF1B1212" 
+                FontFamily="Comic Sans MS" 
+                FontSize="30" >
                 <TextBox.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFFFF980"/>
@@ -228,8 +266,7 @@
         </Grid>
         
         <Grid 
-            Grid.Row="6" 
-            Grid.Column="0">
+            Grid.Row="7">
 
             <Grid>
                 <Grid.RowDefinitions>
@@ -238,7 +275,8 @@
                 </Grid.RowDefinitions>
 
                 <Button
-                    Grid.Row="0">
+                    Grid.Row="0"
+                    Command="{Binding Path=RegisterClick}" >
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FFFFA490"/>
@@ -252,7 +290,8 @@
                 </Button>
 
                 <Button
-                    Grid.Row="1">
+                    Grid.Row="1"
+                    Command="{Binding Path=LoginClick}">
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FF90FFC3"/>

@@ -99,3 +99,6 @@ WPF:
 2. FUUUUUUUUUUUUUUUUUUUUUUUUUUUUUCK
 3. I finally did HTTP request to my api 
 4. It took reaaly long time
+5. enough for now, continue tomorrow
+6. let's continue, we already have some basement for our client app, now we can go futher and make it better :)
+7. OK, client finished, but I am going to spent 20 minutes more to make a beautiful design...

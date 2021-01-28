@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using wpf_client.ViewModel;
 
 namespace wpf_client
 {
@@ -10,6 +11,7 @@ namespace wpf_client
         public RegistrationView()
         {
             InitializeComponent();
+            this.DataContext = new RegistrationViewModel(this);
         }
     }
 }
