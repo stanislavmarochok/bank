@@ -128,7 +128,7 @@ namespace wpf_client.ViewModel
 
             if (response.StatusCode != HttpStatusCode.OK)
             {
-                MessageBox.Show(response.BodyJson.ToString());
+                MessageBox.Show(response.BodyJson != null ? response.BodyJson.ToString() : response.BodyString);
             }
             else
             {

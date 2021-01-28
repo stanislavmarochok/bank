@@ -7,6 +7,10 @@ using System.Net.Http.Headers;
 
 namespace wpf_client.Utils
 {
+
+    /**
+     * This class is used for simplified work with HTTP responses, it contains only necceary parameters
+     */
     class HTTPResponse
     {
         public HttpStatusCode StatusCode = HttpStatusCode.OK;
@@ -14,6 +18,9 @@ namespace wpf_client.Utils
         public string BodyString = null;
     }
 
+    /**
+     * This class implements methods for HTTP requests and authorization control
+     */
     class HTTPConnectionBase
     {
         protected enum RequestType { POST, GET, PUT }

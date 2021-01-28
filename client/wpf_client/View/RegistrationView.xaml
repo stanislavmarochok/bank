@@ -12,8 +12,8 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFFFE898"/>
-                <GradientStop Color="#FFDBFF8D" Offset="1"/>
+                <GradientStop Color="#FFFFF7D9"/>
+                <GradientStop Color="#FFEEFFCA" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.ColumnDefinitions>
@@ -30,22 +30,6 @@
             <RowDefinition Height="100" />
         </Grid.RowDefinitions>
 
-        <TextBlock
-            Grid.Row="0"
-            Grid.Column="0"
-            Text="register"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            FontSize="72" 
-            FontFamily="Arial Black" >
-            <TextBlock.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFFFB55C" Offset="0"/>
-                    <GradientStop Color="#FFFF5E45" Offset="1"/>
-                </LinearGradientBrush>
-            </TextBlock.Foreground>
-        </TextBlock>
-
         <Grid
             Grid.Row="1"
             Grid.Column="0">
@@ -57,7 +41,7 @@
 
             <TextBlock 
                 Text="username" 
-                FontFamily="Comic Sans MS" 
+                FontFamily="Arial Black" 
                 FontSize="30" 
                 VerticalAlignment="Center" 
                 HorizontalAlignment="Center" />
@@ -71,7 +55,7 @@
                 Grid.Row="1"
                 Grid.Column="1" 
                 Foreground="#FF1B1212" 
-                FontFamily="Comic Sans MS" 
+                FontFamily="Bahnschrift SemiBold" 
                 FontSize="30" >
                 <TextBox.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -93,7 +77,7 @@
 
             <TextBlock 
                 Text="email" 
-                FontFamily="Comic Sans MS" 
+                FontFamily="Arial Black" 
                 FontSize="30" 
                 VerticalAlignment="Center" 
                 HorizontalAlignment="Center"
@@ -108,7 +92,7 @@
                 Grid.Row="1"
                 Grid.Column="1" 
                 Foreground="#FF1B1212" 
-                FontFamily="Comic Sans MS" 
+                FontFamily="Bahnschrift SemiBold" 
                 FontSize="30" >
                 <TextBox.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -118,7 +102,7 @@
                 </TextBox.Background>
             </TextBox>
         </Grid>
-        
+
         <Grid
             Grid.Row="3"
             Grid.Column="0">
@@ -130,7 +114,7 @@
 
             <TextBlock 
                 Text="last name" 
-                FontFamily="Comic Sans MS" 
+                FontFamily="Arial Black" 
                 FontSize="30" 
                 VerticalAlignment="Center" 
                 HorizontalAlignment="Center"
@@ -145,7 +129,7 @@
                 Grid.Row="1"
                 Grid.Column="1" 
                 Foreground="#FF1B1212" 
-                FontFamily="Comic Sans MS" 
+                FontFamily="Bahnschrift SemiBold" 
                 FontSize="30" >
                 <TextBox.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -155,7 +139,7 @@
                 </TextBox.Background>
             </TextBox>
         </Grid>
-        
+
         <Grid
             Grid.Row="4"
             Grid.Column="0">
@@ -167,7 +151,7 @@
 
             <TextBlock 
                 Text="first name" 
-                FontFamily="Comic Sans MS" 
+                FontFamily="Arial Black" 
                 FontSize="30" 
                 VerticalAlignment="Center" 
                 HorizontalAlignment="Center"
@@ -182,7 +166,7 @@
                 Grid.Row="1"
                 Grid.Column="1" 
                 Foreground="#FF1B1212" 
-                FontFamily="Comic Sans MS" 
+                FontFamily="Bahnschrift SemiBold" 
                 FontSize="30" >
                 <TextBox.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -192,7 +176,7 @@
                 </TextBox.Background>
             </TextBox>
         </Grid>
-        
+
         <Grid
             Grid.Row="5"
             Grid.Column="0">
@@ -204,7 +188,7 @@
 
             <TextBlock 
                 Text="password" 
-                FontFamily="Comic Sans MS" 
+                FontFamily="Arial Black" 
                 FontSize="30" 
                 VerticalAlignment="Center" 
                 HorizontalAlignment="Center" />
@@ -218,7 +202,7 @@
                 Grid.Row="1"
                 Grid.Column="1" 
                 Foreground="#FF1B1212" 
-                FontFamily="Comic Sans MS" 
+                FontFamily="Bahnschrift SemiBold" 
                 FontSize="30" >
                 <TextBox.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -228,7 +212,7 @@
                 </TextBox.Background>
             </TextBox>
         </Grid>
-        
+
         <Grid
             Grid.Row="6"
             Grid.Column="0">
@@ -240,7 +224,7 @@
 
             <TextBlock 
                 Text="confirm" 
-                FontFamily="Comic Sans MS" 
+                FontFamily="Arial Black" 
                 FontSize="30" 
                 VerticalAlignment="Center" 
                 HorizontalAlignment="Center" />
@@ -254,7 +238,7 @@
                 Grid.Row="1"
                 Grid.Column="1" 
                 Foreground="#FF1B1212" 
-                FontFamily="Comic Sans MS" 
+                FontFamily="Bahnschrift SemiBold" 
                 FontSize="30" >
                 <TextBox.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -264,7 +248,7 @@
                 </TextBox.Background>
             </TextBox>
         </Grid>
-        
+
         <Grid 
             Grid.Row="7">
 
@@ -276,6 +260,7 @@
 
                 <Button
                     Grid.Row="0"
+                    IsDefault="True"
                     Command="{Binding Path=RegisterClick}" >
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -285,8 +270,8 @@
                     </Button.Background>
                     <TextBlock 
                         Text="register" 
-                        FontFamily="Franklin Gothic Medium" 
-                        FontSize="40" />
+                        FontFamily="Arial Black" 
+                        FontSize="40" Foreground="#FF4040FF" />
                 </Button>
 
                 <Button
@@ -300,10 +285,30 @@
                     </Button.Background>
                     <TextBlock 
                         Text="sign in" 
-                        FontFamily="Franklin Gothic Medium" 
+                        FontFamily="Arial Black" 
                         FontSize="40" HorizontalAlignment="Stretch" />
                 </Button>
             </Grid>
         </Grid>
+        <TextBlock
+            Grid.Column="0"
+            Text="ZZZ Bank"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            FontSize="72" FontFamily="Arial Black" Margin="25,0,0,0" Width="475" >
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF35EDFF" Offset="0.494"/>
+                    <GradientStop Color="#FF45AAFF" Offset="1"/>
+                    <GradientStop Color="#FF35B6FF" Offset="0.016"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <TextBlock
+            Grid.Column="0"
+            Text="registration"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            FontSize="72" FontFamily="Arial Black" Margin="505,0,0,0" Foreground="#FF04D1FF" Width="469" />
     </Grid>
 </Window>

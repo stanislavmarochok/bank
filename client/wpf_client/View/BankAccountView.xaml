@@ -13,15 +13,15 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFF5F567"/>
-                <GradientStop Color="#FFB3FF87" Offset="1"/>
+                <GradientStop Color="#FFFFFFC3"/>
+                <GradientStop Color="#FFD2FFD2" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="96" />
             <RowDefinition Height="72" />
-            <RowDefinition Height="72" />
-            <RowDefinition Height="385*" />
+            <RowDefinition Height="66" />
+            <RowDefinition />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -30,23 +30,15 @@
         <Grid
             Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3.5*" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="567*" />
+                <ColumnDefinition Width="233*" />
             </Grid.ColumnDefinitions>
-
-            <TextBlock
-                Margin="0,30,0,30"
-                Text="Welcome to ZZZ Bank Control Panel" 
-                FontSize="36" 
-                FontFamily="Bahnschrift" 
-                HorizontalAlignment="Center" 
-                Width="576" />
 
 
             <Button
                 Grid.Row="0"
                 Grid.Column="1"
-                Margin="10"
+                Margin="10,10,10,10"
                 Command="{Binding Path=LogoutClick}" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -56,8 +48,8 @@
                 </Button.Background>
                 <TextBlock 
                     Text="log out" 
-                    FontFamily="Franklin Gothic Medium" 
-                    FontSize="40" />
+                    FontFamily="Arial Black" 
+                    FontSize="40" Foreground="#FFF9FFBA" />
             </Button>
         </Grid>
 
@@ -79,7 +71,7 @@
         <Grid
             Grid.Row="3">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="1.5*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
@@ -92,7 +84,7 @@
                 Text="{Binding Path=AmountToAddCharge, Mode=TwoWay}"
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
-                FontSize="45" 
+                FontSize="36" 
                 FontFamily="Arial Black" Background="White" />
 
             <Button
@@ -108,7 +100,7 @@
                 </Button.Background>
                 <TextBlock 
                     Text="Add" 
-                    FontFamily="Bahnschrift" 
+                    FontFamily="Arial Black" 
                     FontSize="48" />
             </Button>
 
@@ -124,9 +116,23 @@
                 </Button.Background>
                 <TextBlock 
                     Text="Charge" 
-                    FontFamily="Bahnschrift" 
+                    FontFamily="Arial Black" 
                     FontSize="48" />
             </Button>
         </Grid>
+        <TextBlock
+            Grid.Column="0"
+            Text="ZZZ Bank"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            FontSize="72" FontFamily="Arial Black" Margin="10,0,0,0" Width="475" Height="82" >
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF35EDFF" Offset="0.494"/>
+                    <GradientStop Color="#FF45AAFF" Offset="1"/>
+                    <GradientStop Color="#FF35B6FF" Offset="0.016"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
     </Grid>
 </Window>
